@@ -11,17 +11,62 @@ img {
     max-width: 400px;
     width: 100%;
     height: auto;
+    margin-top: 1rem;
 }
 
 .container {
     max-width: 1920px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     margin: 0 auto;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.container__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container__item {
+    margin: 1rem 0;
 }
 
 input {
+    appearance: none;
+}
+
+label {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 2rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-bottom: 1px solid #FF0000;
+}
+
+label:hover {
+    background-color: #FF0000;
+    transition: 1s;
+}
+
+label:after {
+    content: '\1F7A9';
+    transform: rotate(45deg);
+    transition: 0.5s;
+}
+
+input:checked + label:after {
+    transform: rotate(90deg);
+}
+
+.mem-description {
     display: none;
+    transition: 0.5s;
+}
+
+input:checked ~ .mem-description {
+    display: block;
 }
