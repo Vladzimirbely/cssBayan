@@ -4,7 +4,7 @@ html {
 
 body {
     font-size: 1.6rem;
-    background-color: rgb(165, 209, 129);
+    background-color: rgb(231, 241, 171);
 }
 
 img {
@@ -51,7 +51,7 @@ label {
     cursor: pointer;
 }
 .border {
-    border: 1px solid #FF0000;
+    border: 1px solid #7c8533;
 }
 
 .title {
@@ -81,7 +81,8 @@ input:checked + .title:after {
     cursor: pointer; 
 }
 
-input:checked ~ .mem-description {
+input:checked ~ .mem-description,
+input:hover ~ .mem-description {
     visibility: visible;
     height: 300px;
     overflow: none;
