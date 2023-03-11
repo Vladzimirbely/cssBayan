@@ -38,7 +38,7 @@ img {
 }
 
 input {
-    display: none;
+    appearance: none;
 }
 
 label {
