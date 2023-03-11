@@ -8,10 +8,12 @@ body {
 }
 
 img {
-    max-width: 400px;
+    max-width: 300px;
     width: 100%;
     height: auto;
     margin-top: 1rem;
+    padding: 1rem 0;
+    box-sizing: border-box;
 }
 
 .container {
@@ -20,11 +22,12 @@ img {
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    padding: 5px;
+    padding: 0.5rem;
     box-sizing: border-box;
 }
 
 .container__section {
+    width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -35,16 +38,19 @@ img {
 }
 
 input {
-    appearance: none;
+    display: none;
 }
 
 label {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    padding-right: 2rem;
+    padding-top: 2rem;
     box-sizing: border-box;
     cursor: pointer;
-    border-bottom: 1px solid #FF0000;
+}
+.border {
+    border: 1px solid #FF0000;
 }
 
 label:hover {
@@ -52,21 +58,38 @@ label:hover {
     transition: 1s;
 }
 
-label:after {
+.title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+}
+
+label:hover .title:after {
     content: '\1F7A9';
     transform: rotate(45deg);
     transition: 0.5s;
 }
 
-input:checked + label:after {
+input:checked + .title:after {
     transform: rotate(90deg);
 }
 
 .mem-description {
-    display: none;
-    transition: 0.5s;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s linear;
+    text-align: center;
+    cursor: pointer; 
 }
 
 input:checked ~ .mem-description {
-    display: block;
+    visibility: visible;
+    height: auto;
+    overflow: none;
+    opacity: 1;
+    transition: all 0.5s linear;
 }
