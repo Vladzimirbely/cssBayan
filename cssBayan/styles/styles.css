@@ -55,6 +55,11 @@ label {
     box-sizing: border-box;
     cursor: pointer;
 }
+
+label:hover {
+    color: #a09494;
+}
+
 .border {
     border: 1px solid #7c8533;
 }
@@ -67,14 +72,18 @@ label {
     box-sizing: border-box;
 }
 
+.container__section:hover .title:after {
+    content: '\1F7A9';
+    transition: 0.5s;
+}
+
 label:hover .title:after {
     content: '\1F7A9';
-    transform: rotate(45deg);
     transition: 0.5s;
 }
 
 input:checked + .title:after {
-    transform: rotate(90deg);
+    transform: rotate(45deg);
 }
 
 .mem-description {
@@ -99,10 +108,11 @@ input:hover ~ .mem-description {
 @media (max-width: 690px) {
     h1 {
         font-size: 2.6rem;
+        margin-bottom: 1rem;
     }
 
     label {
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
 
     .container__section {
@@ -113,10 +123,11 @@ input:hover ~ .mem-description {
 @media (max-width: 480px) {
     h1 {
         font-size: 1.6rem;
+        margin-bottom: 1rem;
     }
 
     label {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         padding-top: 0.5rem;
     }
 
