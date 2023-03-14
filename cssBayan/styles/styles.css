@@ -7,8 +7,12 @@ body {
     background-color: rgb(231, 241, 171);
 }
 
+input {
+    appearance: none;
+}
+
 img {
-    max-width: 300px;
+    max-width: 40rem;
     width: 100%;
     height: auto;
     margin-top: 1rem;
@@ -16,13 +20,8 @@ img {
     box-sizing: border-box;
 }
 
-h1 {
-    padding: 0;
-    margin: 0;
-}
-
 .container {
-    max-width: 820px;
+    max-width: 82rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,81 +30,84 @@ h1 {
     box-sizing: border-box;
 }
 
-.container__section {
-    width: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+@media(max-width: 2500px) {
+    h1 {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .container__section {
+        width: 60rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .container__item {
+        margin: 1rem 0;
+    }
+    
+    label {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 2rem;
+        padding-top: 2rem;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+    
+    label:hover {
+        color: #a09494;
+    }
+    
+    .border {
+        border: 0.1rem solid #7c8533;
+    }
+    
+    .title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
+    }
+    
+    .container__section:hover .title:after {
+        content: '\1F7A9';
+        transition: 0.5s;
+    }
+    
+    label:hover .title:after {
+        content: '\1F7A9';
+        transition: 0.5s;
+    }
+    
+    input:checked + .title:after {
+        transform: rotate(45deg);
+    }
+    
+    .mem-description {
+        visibility: hidden;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        text-align: center;
+        cursor: pointer; 
+        transition: all 0.5s linear;
+    }
+    
+    input:checked ~ .mem-description,
+    input:hover ~ .mem-description {
+        visibility: visible;
+        height: 42rem;
+        overflow: none;
+        opacity: 1;
+        transition: all 0.5s linear;
+    }
 }
 
-.container__item {
-    margin: 1rem 0;
-}
-
-input {
-    appearance: none;
-}
-
-label {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    font-size: 2rem;
-    padding-top: 2rem;
-    box-sizing: border-box;
-    cursor: pointer;
-}
-
-label:hover {
-    color: #a09494;
-}
-
-.border {
-    border: 1px solid #7c8533;
-}
-
-.title {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    padding-right: 1rem;
-    box-sizing: border-box;
-}
-
-.container__section:hover .title:after {
-    content: '\1F7A9';
-    transition: 0.5s;
-}
-
-label:hover .title:after {
-    content: '\1F7A9';
-    transition: 0.5s;
-}
-
-input:checked + .title:after {
-    transform: rotate(45deg);
-}
-
-.mem-description {
-    visibility: hidden;
-    height: 0;
-    overflow: hidden;
-    opacity: 0;
-    text-align: center;
-    cursor: pointer; 
-    transition: all 0.5s linear;
-}
-
-input:checked ~ .mem-description,
-input:hover ~ .mem-description {
-    visibility: visible;
-    height: 250px;
-    overflow: none;
-    opacity: 1;
-    transition: all 0.5s linear;
-}
-
-@media (max-width: 690px) {
+@media (max-width: 820px) {
     h1 {
         font-size: 2.6rem;
         margin-bottom: 1rem;
@@ -116,7 +118,7 @@ input:hover ~ .mem-description {
     }
 
     .container__section {
-        width: 400px;
+        width: 40rem;
     }
 }
 
@@ -132,7 +134,7 @@ input:hover ~ .mem-description {
     }
 
     .container__section {
-        width: 250px;
+        width: 25rem;
     }
 
     img {
@@ -145,6 +147,6 @@ input:hover ~ .mem-description {
     }
 
     input:checked ~ .mem-description  {
-        height: 200px;
+        height: 24rem;
     }
 }
